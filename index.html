@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LoanLens compares loan offers, calculates EMIs and explores repayment savings.">
+  <title>LoanLens | Smart Loan Advisor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#calculator">Skip to calculator</a>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">L</span><span>Loan<span class="brand-accent">Lens</span></span></a>
+    <nav><a href="#calculator">Calculator</a><a href="#comparison">Compare banks</a><a href="#schedule">Schedule</a></nav>
+    <a class="top-cta" href="#calculator">Explore my loan <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR CLEARER PATH TO BORROWING</div>
+        <h1>Make every loan<br><em>decision</em> count.</h1>
+        <p>See the real cost of borrowing. Compare lenders, understand every rupee and discover how small changes can save big.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#calculator">Calculate my EMI <span>→</span></a><a class="text-link" href="#comparison">Compare lenders ↓</a></div>
+        <div class="trust-row"><span>✓ Transparent calculations</span><span>✓ No sign-up needed</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of loan insights">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card">
+          <div class="art-card-head"><span>YOUR LOAN SNAPSHOT</span><span class="live-dot">● LIVE</span></div>
+          <div class="art-amount">₹44,186<span>/mo</span></div><div class="art-caption">Estimated monthly EMI</div>
+          <div class="art-divider"></div>
+          <div class="art-stat"><span><i class="dot principal-dot"></i> Principal</span><b>₹50,00,000</b></div>
+          <div class="art-stat"><span><i class="dot interest-dot"></i> Interest</span><b>₹56,04,529</b></div>
+          <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="art-foot"><span>20 year home loan</span><span class="up">↓ Better clarity</span></div>
+        </div>
+        <div class="floating-badge"><span>✦</span><div><b>Compare smarter</b><small>Find a better rate</small></div></div>
+        <div class="hero-spark">✳</div>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <div class="section-heading"><div><div class="eyebrow">01 / EMI CALCULATOR</div><h2>Your loan, <em>decoded.</em></h2><p>Adjust the numbers and instantly see how they affect your monthly repayment.</p></div><span class="section-tag">LIVE CALCULATOR</span></div>
+      <div class="calculator-grid">
+        <div class="panel input-panel">
+          <div class="panel-title"><div><h3>Loan details</h3><p>Set your preferred loan parameters</p></div><span class="round-icon">⌁</span></div>
+          <label class="small-field-label" for="loanType">Loan category</label><select id="loanType" class="extra-select"><option value="home">Home loan</option><option value="auto">Auto loan</option><option value="education">Education loan</option><option value="personal">Personal loan</option></select>
+          <div class="field-block">
+            <div class="field-label"><label for="loanAmount">Loan amount</label><output id="amountLabel">₹50,00,000</output></div>
+            <input id="loanAmount" type="range" min="100000" max="10000000" step="10000" value="5000000">
+            <div class="range-ends"><span>₹1 Lakh</span><span>₹1 Crore</span></div>
+            <input id="amountNumber" class="number-input" type="number" min="100000" max="10000000" step="10000" value="5000000" aria-label="Loan amount in rupees">
+          </div>
+          <div class="field-block">
+            <div class="field-label"><label for="interestRate">Interest rate</label><output id="rateLabel">8.75%</output></div>
+            <input id="interestRate" type="range" min="0" max="30" step="0.05" value="8.75">
+            <div class="range-ends"><span>0%</span><span>30%</span></div>
+            <input id="rateNumber" class="number-input" type="number" min="0" max="30" step="0.05" value="8.75" aria-label="Annual interest rate percentage">
+          </div>
+          <div class="field-block">
+            <div class="field-label"><label for="tenure">Loan tenure</label><output id="tenureLabel">20 years</output></div>
+            <input id="tenure" type="range" min="1" max="30" step="any" value="20">
+            <div class="range-ends"><span>1 year</span><span>30 years</span></div>
+            <div class="tenure-input"><input id="tenureNumber" class="number-input" type="number" min="1" max="30" step="0.083333" value="20" aria-label="Loan tenure in years"><span>years</span></div>
+          </div>
+          <div class="field-block tenure-month-field"><label class="small-field-label" for="tenureMonthsNumber">Or enter tenure directly in months</label><input id="tenureMonthsNumber" class="number-input" type="number" min="12" max="360" step="1" value="240" aria-label="Loan tenure in months"></div>
+          <div class="note-box"><span>ⓘ</span> Calculations use a fixed annual interest rate converted to a monthly rate. Enter tenure in years or months. Actual lender terms may vary.</div><p class="validation-status" id="validationStatus" role="status" aria-live="polite">Inputs are checked in JavaScript before calculation.</p><div class="benchmark-status" id="benchmarkStatus" role="status">Checking the SRS benchmark…</div>
+        </div>
+        <div class="panel results-panel">
+          <div class="panel-title"><div><h3>Your repayment summary</h3><p>Here's what your loan really costs</p></div><span class="result-chip">● INSTANT RESULTS</span></div>
+          <div class="emi-highlight"><span>YOUR MONTHLY EMI</span><strong id="emiValue">₹44,186</strong><small>for <b id="emiMonths">240</b> monthly payments</small></div>
+          <div class="summary-grid">
+            <div class="summary-item"><span>Principal amount</span><b id="principalValue">₹50,00,000</b></div>
+            <div class="summary-item"><span>Total interest</span><b id="interestValue">₹56,04,529</b></div>
+            <div class="summary-item total"><span>Total repayment</span><b id="totalValue">₹1,06,04,640</b></div>
+          </div>
+          <div class="chart-area"><div class="chart-wrap"><canvas id="repaymentChart" aria-label="Principal and interest doughnut chart"></canvas><div class="chart-center"><b id="principalPercent">47%</b><small>Principal</small></div></div>
+            <div class="chart-legend"><div><i class="legend-dot principal-bg"></i><span>Principal repaid</span><b id="legendPrincipal">₹50.0L</b></div><div><i class="legend-dot interest-bg"></i><span>Total interest</span><b id="legendInterest">₹56.0L</b></div><p>Interest is the additional amount paid to borrow the principal.</p></div>
+          </div><p id="chartStatus" class="disclaimer" role="status"></p><div class="server-save-row"><button type="button" class="button button-primary" id="saveScenario">Save this loan scenario</button><span id="serverStatus" class="disclaimer" role="status">Save a snapshot in this browser using LocalStorage. Data stays on this device and is not uploaded.</span></div><div class="trend-chart-panel"><h4>Cumulative repayment over time</h4><div class="trend-chart-wrap"><canvas id="repaymentTrendChart" aria-label="Cumulative principal and interest line chart"></canvas></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section comparison-section" id="comparison">
+      <div class="section-heading"><div><div class="eyebrow">02 / BANK COMPARISON</div><h2>Same loan. <em>Different cost.</em></h2><p>Compare three bank offers plus one illustrative high-rate lender for the selected category. Select an offer to apply its displayed reference rate to your calculator.</p></div><span class="section-tag">3 BANKS + 1 DEMO NBFC</span></div>
+      <div class="comparison-note">Loan category selection updates the lender comparison across home, auto, education and personal loans. Home-loan references were reviewed against official lender pages on 19 Nov 2026: SBI shows 7.25% p.a. onwards effective 1 Apr 2026; HDFC shows a profile-dependent 8.00%–13.45% range; ICICI’s displayed 8.50% starting card was valid only through 31 Jul 2026 and is therefore marked as expired reference data. Auto, education and personal-loan figures remain published/sample reference inputs and are not live-verified offers. The illustrative NBFC row (15%) is a demo input that shows the high-rate versus low-rate contrast. No bank API is connected. Confirm the current sanctioned rate, processing fee, taxes and prepayment clause directly with the lender before making a decision.</div>
+      <p class="rate-sources">Official references: <a href="https://sbi.bank.in/web/interest-rates/interest-rates/loan-schemes-interest-rates/home-loans-interest-rates-current" target="_blank" rel="noopener">SBI home-loan rates</a> · <a href="https://sbi.bank.in/en/web/interest-rates/interest-rates/processing-fees" target="_blank" rel="noopener">SBI processing fees</a> · <a href="https://homeloans.hdfc.bank.in/housing-loans/home-loans" target="_blank" rel="noopener">HDFC home-loan rates</a> · <a href="https://homeloans.hdfc.bank.in/checklist/documents-charges" target="_blank" rel="noopener">HDFC fees and prepayment terms</a> · <a href="https://www.icici.bank.in/personal-banking/loans/home-loan/service-charges" target="_blank" rel="noopener">ICICI rates and charges</a>. Published rate floors and fee ceilings depend on borrower profile, loan type and date.</p>
+      <p class="rate-sources" id="catalogStatus" role="status">Loading rate catalogue…</p>
+      <div class="table-scroll"><table class="comparison-table"><thead><tr><th scope="col">LENDER / OFFER</th><th scope="col">INTEREST RATE</th><th scope="col">PROCESSING FEE</th><th scope="col">PREPAYMENT CHARGE</th><th scope="col">EST. MONTHLY EMI</th><th scope="col"><span class="sr-only">Action</span></th></tr></thead><tbody id="bankRows"></tbody></table></div>
+      <div class="panel cost-compare" id="costCompare" aria-live="polite"></div>
+      <div class="best-deal" id="bestDeal"><span class="best-icon">✦</span><div><b>Lowest estimated cost</b><p>Choose a sample offer to see its EMI calculated with your current loan details.</p></div></div>
+    </section>
+
+    <section class="section simulator-section" id="prepayment">
+      <div class="section-heading"><div><div class="eyebrow">03 / PREPAYMENT SIMULATOR</div><h2>Pay a little extra. <em>Save a lot.</em></h2><p>Add multiple lump-sum payments to model how they reduce interest and shorten the loan.</p></div><span class="section-tag">WHAT-IF TOOL</span></div>
+      <div class="simulator-grid">
+        <div class="panel input-panel">
+          <div class="panel-title"><div><h3>Schedule extra payments</h3><p>Choose up to 12 prepayment events</p></div><span class="round-icon">↗</span></div>
+          <div id="prepaymentList" class="prepayment-list" aria-live="polite"></div>
+          <button type="button" class="button button-outline add-prepayment" id="addPrepayment">+ Add another prepayment</button>
+          <label class="small-field-label" for="prepayLender">Lender terms to model</label>
+          <select id="prepayLender" class="extra-select"><option value="SBI">State Bank of India (SBI)</option><option value="HDFC">HDFC Bank</option><option value="ICICI">ICICI Bank</option><option value="NBFC">Illustrative NBFC (high-rate demo)</option></select>
+          <label class="small-field-label" for="prepayRateType">Interest-rate type</label>
+          <select id="prepayRateType" class="extra-select"><option value="floating">Floating / adjustable</option><option value="fixed">Fixed</option></select>
+          <label class="small-field-label" for="prepayPurpose">Borrower / loan purpose</label>
+          <select id="prepayPurpose" class="extra-select"><option value="individual">Individual · non-business purpose</option><option value="business">Business purpose / non-individual</option></select>
+          <label class="small-field-label" for="prepaySource">Prepayment funds</label>
+          <select id="prepaySource" class="extra-select"><option value="own">Own funds / savings</option><option value="borrowed">Borrowed funds / balance transfer</option></select>
+          <button type="button" class="button button-outline add-prepayment" id="loadSrsDemo">Load SRS demo: ₹50L · 20 yrs · 8.75% · ₹2L in year 3</button>
+          <div class="prepay-fee-line">Estimated lender prepayment charge: <b id="prepayFeeResult">₹0</b></div>
+          <div class="prepay-fee-line">Applicable rule: <b id="prepayRuleResult">SBI home-loan brochure: nil penalty on prepayment</b></div>
+          <div class="note-box"><span>ⓘ</span> Extra payments are applied after that month's EMI. If an event amount equals or exceeds the remaining balance, it models full foreclosure. Published/reference rules are used where available; clearly labelled demo assumptions fill gaps. Some lender restrictions (such as part-payment frequency caps) are not enforced. Verify your sanction letter.</div>
+        </div>
+        <div class="panel savings-panel"><div class="panel-title"><div><h3>Your potential savings</h3><p>Compared with making no extra payment</p></div><span class="saving-chip">✦ SMART MOVE</span></div>
+          <div class="saving-big"><span>ESTIMATED INTEREST SAVED</span><b id="savedInterest">Calculating…</b></div>
+          <div class="saving-stats"><div><span>Loan closes earlier by</span><b id="monthsSaved">Calculating…</b></div><div><span>New estimated tenure</span><b id="newTenure">Calculating…</b></div><div><span>Remaining balance after first payment</span><b id="balanceAfter">Calculating…</b></div></div><p id="foreclosureStatus" class="disclaimer" role="status">Part-prepayment scenario.</p>
+          <div class="saving-bar"><span id="savingBar"></span></div><div class="saving-foot"><span>Potential interest reduction</span><b id="savingPercent">0%</b></div>
+        </div>
+      </div>
+      <div class="panel srs-reconcile" id="srsReconcile" aria-live="polite"></div>
+    </section>
+
+    <section class="section schedule-section" id="schedule">
+      <div class="section-heading"><div><div class="eyebrow">04 / REPAYMENT BREAKDOWN</div><h2>Every month, <em>accounted for.</em></h2><p>See exactly how each payment reduces your balance over time.</p></div><button class="button button-outline" id="downloadSchedule">↓ Download / Print PDF</button></div>
+      <div class="schedule-toolbar"><div><b>Amortization schedule</b><span id="scheduleMeta">20 years · 240 monthly payments</span></div><label class="toggle-label"><input type="checkbox" id="monthlyView"> Show monthly details</label></div>
+      <div class="table-scroll schedule-scroll"><table class="schedule-table"><thead><tr><th scope="col">PERIOD</th><th scope="col">OPENING BALANCE</th><th scope="col">PRINCIPAL PAID</th><th scope="col">INTEREST PAID</th><th scope="col">CLOSING BALANCE</th></tr></thead><tbody id="scheduleRows"></tbody></table></div>
+      <p class="table-footnote">Amounts are rounded to the nearest rupee. Final payment may be adjusted slightly to clear the remaining balance.</p>
+    </section>
+
+    <section class="section extra-section">
+      <div class="section-heading"><div><div class="eyebrow">05 / EXTRA PLANNING TOOLS</div><h2>Plan beyond the <em>EMI.</em></h2><p>Quick estimates to help you think about affordability and long-term costs.</p></div><span class="section-tag">BONUS TOOLS</span></div>
+      <div class="extras-grid">
+        <div class="panel extra-card"><span class="extra-icon">↗</span><h3>Inflation-adjusted cost</h3><p>Estimate the present purchasing-power value of future repayments using your selected annual CPI / inflation assumption. This is an assumption-based estimate, not a live CPI feed.</p><label for="inflationRate">Annual CPI / inflation assumption</label><div class="inline-input"><input id="inflationRate" type="number" min="0" max="20" step=".5" value="5"><span>%</span></div><div class="extra-result"><small>Approx. present value of total repayment</small><b id="realCost">₹40,00,000</b></div></div>
+        <div class="panel extra-card"><span class="extra-icon">⌂</span><h3>Loan eligibility estimate</h3><p>Estimate a possible loan amount from monthly income and existing EMI commitments.</p><label for="salary">Monthly take-home salary (₹)</label><input id="salary" class="number-input" type="number" min="0" value="80000"><label for="existingEmi">Existing monthly EMIs (₹)</label><input id="existingEmi" class="number-input" type="number" min="0" value="5000"><label for="foir">Maximum EMI-to-income ratio (%)</label><input id="foir" class="number-input" type="number" min="0" max="80" value="50"><div class="extra-result"><small>Estimated eligible loan amount*</small><b id="eligibleLoan">₹35,00,000</b></div><small class="disclaimer">*Illustrative estimate assuming 50% EMI-to-income limit and current loan rate/tenure. Lender eligibility varies.</small></div>
+        <div class="panel extra-card"><span class="extra-icon">▤</span><h3>Tax deduction estimator</h3><p>Estimate potentially eligible deductions from the loan interest and principal in this schedule.</p><label for="taxPurpose">Loan purpose</label><select id="taxPurpose" class="extra-select"><option value="home">Home loan</option><option value="education">Education loan</option><option value="personal">Personal / other loan</option></select><label for="taxRegime">Tax regime</label><select id="taxRegime" class="extra-select"><option value="old">Old tax regime</option><option value="new">New tax regime</option></select><label for="taxYear">Repayment year</label><input id="taxYear" class="number-input" type="number" min="1" max="30" value="1"><label class="tax-check"><input id="taxQualifies" type="checkbox" checked> Loan and borrower meet the relevant tax-section conditions</label><label class="tax-check"><input id="selfOccupied" type="checkbox" checked> Self-occupied property (Section 24(b) limit)</label><label class="small-field-label" for="other80C">Other Section 80C deductions already used (₹/year)</label><input id="other80C" class="number-input" type="number" min="0" max="150000" step="1000" value="0"><label class="small-field-label" for="taxRate">Estimated marginal tax rate (%)</label><input id="taxRate" class="number-input" type="number" min="0" max="30" step="1" value="20"><label class="tax-check"><input id="educationEligible" type="checkbox" checked> Education loan from eligible financial institution / approved charitable institution</label><div class="tax-row"><span>Home interest · Section 24(b)</span><b id="taxInterest">₹0</b></div><div class="tax-row"><span>Home principal · Section 80C (remaining shared cap)</span><b id="taxPrincipal">₹0</b></div><div class="tax-row"><span>Education interest · Section 80E (up to 8 years)</span><b id="taxEducation">₹0</b></div><div class="tax-row"><span>Estimated tax reduction at selected marginal rate</span><b id="taxSaving">₹0</b></div><small class="disclaimer" id="taxNote">Indicative annual deductions only; actual eligibility and tax impact depend on assessment-year law and personal circumstances.</small></div>
+      </div>
+    </section>
+    <section class="closing-cta"><div><div class="eyebrow">BORROW WITH CONFIDENCE</div><h2>Clarity today. Better choices tomorrow.</h2><p>LoanLens puts the numbers in your hands — so you can choose with confidence.</p></div><a class="button button-light" href="#calculator">Recalculate my loan ↑</a></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">L</span><span>Loan<span class="brand-accent">Lens</span></span></a><span>Static web application · HTML, CSS & JavaScript</span><span>© 2026 LoanLens</span></footer>
+  <script src="loan-core.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

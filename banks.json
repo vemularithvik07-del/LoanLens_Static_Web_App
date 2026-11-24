@@ -1,0 +1,286 @@
+{
+  "home": [
+    {
+      "name": "State Bank of India (SBI)",
+      "code": "SBI",
+      "rate": 7.25,
+      "rateLabel": "7.25% p.a. onwards (SBI card rate effective 1 Apr 2026; borrower profile / terms apply)",
+      "feePct": 0,
+      "feeMin": 0,
+      "feeKnown": false,
+      "feeLabel": "Concessions / waivers vary; check the current SBI fee schedule",
+      "penaltyPct": 0,
+      "penaltyLabel": "Nil prepayment penalty stated in SBI home-loan terms",
+      "source": "https://sbi.bank.in/web/interest-rates/interest-rates/loan-schemes-interest-rates/home-loans-interest-rates-current",
+      "feeSource": "https://sbi.bank.in/en/web/interest-rates/interest-rates/processing-fees",
+      "penaltySource": "https://sbi.bank.in/documents/53471/263971/SBI%2B-%2BCPCR%2BBooklet%2B%28English%29_14.07.2025.pdf/0c820ebc-05f1-55e8-b065-1050d5b25936?download=true&t=1793430786428&version=1.1",
+      "type": "published-reference"
+    },
+    {
+      "name": "HDFC Bank",
+      "code": "HDFC",
+      "rate": 8.0,
+      "rateLabel": "8.00% p.a. starting floor; published range 8.00%–13.45% (profile dependent)",
+      "feePct": 0.5,
+      "feeMin": 4000,
+      "feeKnown": true,
+      "feeLabel": "Salaried / self-employed professional: up to 0.50% or ₹4,000, whichever is higher, plus taxes",
+      "penaltyPct": 0,
+      "penaltyLabel": "Floating individual: nil; fixed/business cases may attract charges",
+      "source": "https://homeloans.hdfc.bank.in/housing-loans/home-loans",
+      "feeSource": "https://homeloans.hdfc.bank.in/checklist/documents-charges",
+      "penaltySource": "https://homeloans.hdfc.bank.in/checklist/documents-charges",
+      "type": "published-reference"
+    },
+    {
+      "name": "ICICI Bank",
+      "code": "ICICI",
+      "rate": 8.5,
+      "rateLabel": "8.50% p.a. starting reference; official rate card validity ended 31 Jul 2026 — reconfirm current offer",
+      "feePct": 0.5,
+      "feeMin": 0,
+      "feeKnown": true,
+      "feeLabel": "0.50% of loan amount + applicable taxes (published fee reference)",
+      "penaltyPct": 0,
+      "penaltyLabel": "Floating adjustable-rate: nil; fixed-rate may attract charges",
+      "source": "https://www.icici.bank.in/personal-banking/loans/home-loan/interest-rates",
+      "feeSource": "https://www.icici.bank.in/personal-banking/loans/home-loan/service-charges",
+      "penaltySource": "https://www.icici.bank.in/personal-banking/loans/home-loan/service-charges",
+      "type": "published-reference"
+    },
+    {
+      "name": "Illustrative NBFC (high-rate demo)",
+      "code": "NBFC",
+      "rate": 15.0,
+      "rateLabel": "15.00% p.a. illustrative high-rate lender (demo input, not a real quote)",
+      "feePct": 2.0,
+      "feeMin": 0,
+      "feeKnown": true,
+      "feeLabel": "Illustrative 2% + taxes (demo assumption)",
+      "penaltyPct": 4,
+      "penaltyLabel": "Illustrative 4% prepayment charge (demo assumption)",
+      "source": "#comparison",
+      "type": "illustrative"
+    }
+  ],
+  "auto": [
+    {
+      "name": "State Bank of India (SBI)",
+      "code": "SBI",
+      "rate": 8.55,
+      "rateLabel": "8.55% p.a. onwards (15 Oct 2026 rate card; score/tenure based)",
+      "feePct": 0,
+      "feeMin": 0,
+      "feeKnown": true,
+      "feeTiers": [
+        {
+          "max": 500000,
+          "fee": 500
+        },
+        {
+          "max": 1000000,
+          "fee": 1000
+        },
+        {
+          "max": null,
+          "fee": 1500
+        }
+      ],
+      "feeLabel": "Salaried new-car schedule: ₹500 / ₹1,000 / ₹1,500 by loan band + GST; non-salaried rates differ",
+      "penaltyPct": 0,
+      "penaltyLabel": "Nil prepayment charge for the standard new-car loan in the referenced SBI KFS; used-car scheme differs",
+      "source": "https://sbi.bank.in/web/interest-rates/interest-rates/loan-schemes-interest-rates/auto-loans",
+      "feeSource": "https://sbi.bank.in/en/web/interest-rates/interest-rates/processing-fees",
+      "penaltySource": "https://sbi.bank.in/documents/53471/58026269/Key%2BFact%2BStatement%2Bfor%2BAuto%2BLoan-English.pdf/15e58ec1-0600-c6d9-ca9b-15a3d1d2b65f?download=true&t=1776939237236&version=1.0",
+      "type": "published-reference"
+    },
+    {
+      "name": "HDFC Bank",
+      "code": "HDFC",
+      "rate": 9.0,
+      "rateLabel": "9.00% p.a. onwards (published rack-rate reference)",
+      "feePct": 0,
+      "feeFixed": 700,
+      "feeKnown": true,
+      "feeLabel": "₹700 documentation charge (published schedule; other charges may apply)",
+      "penaltyPct": 5,
+      "penaltyLabel": "5% part-prepayment charge in applicable early period; full closure varies by timing",
+      "source": "https://www.hdfc.bank.in/car-loan/interest-rates-and-charges",
+      "type": "published-reference"
+    },
+    {
+      "name": "ICICI Bank",
+      "code": "ICICI",
+      "rate": 8.4,
+      "rateLabel": "8.40% p.a. onwards (new car >36 months; CIBIL/model based)",
+      "feePct": 0,
+      "feeMin": 0,
+      "feeFixed": 8500,
+      "feeKnown": true,
+      "feeLabel": "Up to ₹8,500 + GST for new car; other charges may apply",
+      "penaltyPct": 3,
+      "penaltyLabel": "Part payment 3% up to 24 months, then nil; foreclosure 3% / 2% / nil by seasoning",
+      "source": "https://www.icici.bank.in/personal-banking/loans/car-loan/interest-rate",
+      "feeSource": "https://www.icici.bank.in/personal-banking/loans/car-loan/service-charges",
+      "type": "published-reference"
+    },
+    {
+      "name": "Illustrative NBFC (high-rate demo)",
+      "code": "NBFC",
+      "rate": 15.0,
+      "rateLabel": "15.00% p.a. illustrative high-rate lender (demo input, not a real quote)",
+      "feePct": 2.0,
+      "feeMin": 0,
+      "feeKnown": true,
+      "feeLabel": "Illustrative 2% + taxes (demo assumption)",
+      "penaltyPct": 4,
+      "penaltyLabel": "Illustrative 4% prepayment charge (demo assumption)",
+      "source": "#comparison",
+      "type": "illustrative"
+    }
+  ],
+  "education": [
+    {
+      "name": "State Bank of India (SBI)",
+      "code": "SBI",
+      "rate": 9.65,
+      "rateLabel": "9.65% p.a. collateralised student-loan reference; scheme varies",
+      "feePct": 0,
+      "feeMin": 0,
+      "feeKnown": true,
+      "feeTiers": [
+        {
+          "max": 1000000,
+          "fee": 0
+        },
+        {
+          "max": 2000000,
+          "fee": 5000
+        },
+        {
+          "max": null,
+          "pct": 0.5,
+          "cap": 25000
+        }
+      ],
+      "feeLabel": "Nil up to ₹10 lakh; ₹5,000 up to ₹20 lakh; above ₹20 lakh 0.50% capped at ₹25,000 + GST",
+      "penaltyPct": 0,
+      "penaltyLabel": "Check scheme terms; no demo charge assumed",
+      "source": "https://sbi.bank.in/web/interest-rates/interest-rates/loan-schemes-interest-rates/education-loan-scheme",
+      "feeSource": "https://sbi.bank.in/web/personal-banking/loans/education-loans/student-loan-scheme",
+      "type": "published-reference"
+    },
+    {
+      "name": "HDFC Bank",
+      "code": "HDFC",
+      "rate": 10.5,
+      "rateLabel": "10.50% p.a. onwards (published reference)",
+      "feePct": 1.0,
+      "feeMin": 0,
+      "feeFreeBelow": 750000,
+      "feeKnown": true,
+      "feeLabel": "Nil up to ₹7.5 lakh; 1% above ₹7.5 lakh + taxes",
+      "penaltyPct": 0,
+      "penaltyLabel": "Nil prepayment charge in published fee schedule; verify conditions",
+      "source": "https://www.hdfc.bank.in/education-loan/interest-rates-and-charges",
+      "type": "published-reference"
+    },
+    {
+      "name": "ICICI Bank",
+      "code": "ICICI",
+      "rate": 9.0,
+      "rateLabel": "9.00% p.a. secured domestic starting-rate reference",
+      "feePct": 2.0,
+      "feeMin": 0,
+      "feeAdminPct": 0.25,
+      "feeAdminCap": 5000,
+      "feeKnown": true,
+      "feeLabel": "Up to 2% + GST; admin charge up to ₹5,000 or 0.25% (whichever is lower)",
+      "penaltyPct": 0,
+      "penaltyLabel": "No charge assumed in this estimate; verify agreement",
+      "source": "https://www.icici.bank.in/personal-banking/loans/education-loan/interest-rates",
+      "feeSource": "https://www.icici.bank.in/personal-banking/loans/education-loan/interest-rates",
+      "type": "published-reference"
+    },
+    {
+      "name": "Illustrative NBFC (high-rate demo)",
+      "code": "NBFC",
+      "rate": 15.0,
+      "rateLabel": "15.00% p.a. illustrative high-rate lender (demo input, not a real quote)",
+      "feePct": 2.0,
+      "feeMin": 0,
+      "feeKnown": true,
+      "feeLabel": "Illustrative 2% + taxes (demo assumption)",
+      "penaltyPct": 4,
+      "penaltyLabel": "Illustrative 4% prepayment charge (demo assumption)",
+      "source": "#comparison",
+      "type": "illustrative"
+    }
+  ],
+  "personal": [
+    {
+      "name": "State Bank of India (SBI)",
+      "code": "SBI",
+      "rate": 10.0,
+      "rateLabel": "10.00%–15.00% p.a. published scheme range; model uses 10.00% floor",
+      "feePct": 1.5,
+      "feeMin": 1000,
+      "feeCap": 15000,
+      "feeKnown": true,
+      "feeLabel": "Up to 1.50%, minimum ₹1,000 and maximum ₹15,000 + GST",
+      "penaltyPct": 2,
+      "penaltyLabel": "2% modelled on prepaid amount under referenced SBI KFS; product-specific waivers may apply",
+      "source": "https://sbi.bank.in/web/interest-rates/interest-rates/loan-schemes-interest-rates/personal-loans-schemes",
+      "feeSource": "https://sbi.bank.in/web/personal-banking/loans/personal-loans/real-time-xpress-credit",
+      "penaltySource": "https://sbi.bank.in/documents/53471/58026272/Key%2BFact%2BStatement%2Bfor%2BPersonal%2BLoan-English.pdf/6b2f0a4b-da40-6c40-3ade-d5fa9e58922c?t=1776939214719",
+      "type": "published-reference"
+    },
+    {
+      "name": "HDFC Bank",
+      "code": "HDFC",
+      "rate": 10.25,
+      "rateLabel": "10.25% p.a. onwards (published starting reference; profile dependent)",
+      "feePct": 0,
+      "feeMin": 0,
+      "feeFixed": 6500,
+      "feeKnown": true,
+      "feeLabel": "Up to ₹6,500 + GST",
+      "penaltyPct": 4,
+      "penaltyLabel": "4% through 24 EMIs, 3% through 36 EMIs, then 2%; part-payment caps apply",
+      "source": "https://www.hdfc.bank.in/personal-loan/interest-rates-and-charges",
+      "feeSource": "https://www.hdfc.bank.in/personal-loan/interest-rates-and-charges",
+      "penaltySource": "https://www.hdfc.bank.in/personal-loan/interest-rates-and-charges",
+      "type": "published-reference"
+    },
+    {
+      "name": "ICICI Bank",
+      "code": "ICICI",
+      "rate": 10.25,
+      "rateLabel": "10.25% p.a. onwards (published starting reference)",
+      "feePct": 2.0,
+      "feeMin": 0,
+      "feeKnown": true,
+      "feeLabel": "Up to 2% + applicable taxes (published reference)",
+      "penaltyPct": 3,
+      "penaltyLabel": "3% before 24 EMIs; nil after 24 EMIs per published terms",
+      "source": "https://www.icici.bank.in/personal-banking/loans/personal-loan/personal-loan-interest-rates",
+      "feeSource": "https://www.icici.bank.in/personal-banking/loans/personal-loan/service-charges",
+      "penaltySource": "https://www.icici.bank.in/personal-banking/loans/personal-loan/service-charges",
+      "type": "published-reference"
+    },
+    {
+      "name": "Illustrative NBFC (high-rate demo)",
+      "code": "NBFC",
+      "rate": 15.0,
+      "rateLabel": "15.00% p.a. illustrative high-rate lender (demo input, not a real quote)",
+      "feePct": 2.0,
+      "feeMin": 0,
+      "feeKnown": true,
+      "feeLabel": "Illustrative 2% + taxes (demo assumption)",
+      "penaltyPct": 4,
+      "penaltyLabel": "Illustrative 4% prepayment charge (demo assumption)",
+      "source": "#comparison",
+      "type": "illustrative"
+    }
+  ]
+}
